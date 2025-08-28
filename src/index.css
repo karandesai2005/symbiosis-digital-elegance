@@ -2,41 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Symbiosis ACM Design System - Luxury Professional Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Primary Colors - Deep Blue Theme */
+    --primary: 210 92% 15%;        /* #0A2540 - Deep blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 92% 25%;
+    --primary-dark: 210 92% 10%;
+    
+    /* Accent Colors */
+    --accent: 174 100% 37%;         /* #00BFA5 - Teal */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 174 100% 47%;
+    --accent-dark: 174 100% 27%;
+    
+    /* Secondary Colors */
+    --secondary: 51 100% 50%;       /* #FFD700 - Gold */
+    --secondary-foreground: 210 92% 15%;
+    --secondary-light: 51 100% 60%;
+    --secondary-dark: 51 100% 40%;
+    
+    /* Background & Surface */
+    --background: 210 40% 98%;      /* #F9FAFC - Light gray */
+    --foreground: 215 25% 27%;      /* #1A202C - Dark gray */
+    --surface: 0 0% 100%;
+    --surface-elevated: 0 0% 100%;
+    
+    /* Card & Components */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 215 25% 27%;
+    --card-border: 210 20% 94%;
+    
+    /* Glass Effect */
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-shadow: 0 0% 0% / 0.1;
+    
+    /* Interactive States */
+    --hover: 210 20% 96%;
+    --active: 210 20% 92%;
+    
+    /* Text Variants */
+    --text-primary: 215 25% 27%;
+    --text-secondary: 215 16% 47%;
+    --text-muted: 215 14% 64%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 92% 15%), hsl(174 100% 37%));
+    --gradient-secondary: linear-gradient(135deg, hsl(51 100% 50%), hsl(174 100% 37%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 92% 10%) 0%, hsl(210 92% 15%) 50%, hsl(174 100% 37%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
+    --shadow-glow: 0 0 20px hsl(174 100% 37% / 0.3);
+    --shadow-gold: 0 0 20px hsl(51 100% 50% / 0.3);
+    
+    /* Animations */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Border Radius */
+    --radius: 1rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +136,219 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Glass Effect Components */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-lg);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl p-6;
+    transition: all var(--transition-normal);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    @apply px-8 py-4 font-semibold rounded-xl transition-all duration-300;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    border: 1px solid hsl(var(--accent));
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 font-medium rounded-lg transition-all duration-300;
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid hsl(var(--secondary));
+  }
+
+  .btn-secondary:hover {
+    background: hsl(var(--secondary-dark));
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-1px);
+  }
+
+  /* Animation Classes */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .scale-hover:hover {
+    transform: scale(1.05);
+    transition: transform var(--transition-normal);
+  }
+
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, hsl(174 100% 37% / 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, hsl(51 100% 50% / 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Navigation */
+  .nav-glass {
+    @apply glass fixed top-0 left-0 right-0 z-50;
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Cards */
+  .card-elegant {
+    @apply bg-card rounded-xl p-6 transition-all duration-300;
+    border: 1px solid hsl(var(--card-border));
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card-elegant:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Team Cards */
+  .team-card {
+    @apply glass-card text-center;
+    transition: all var(--transition-normal);
+  }
+
+  .team-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+  }
+
+  /* Text Styles */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gold {
+    color: hsl(var(--secondary));
+  }
+
+  .text-teal {
+    color: hsl(var(--accent));
+  }
+}
+
+@layer utilities {
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--accent) / 0.6);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Responsive Utilities */
+  .container-custom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent));
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent-dark));
   }
 }
