@@ -42,6 +42,7 @@ const Home = () => {
 
   return (
     <div className="fade-in">
+
       {/* Hero Section */}
       <section className="hero-gradient min-h-screen flex items-center justify-center text-center py-20 relative overflow-hidden">
         <div className="container-custom z-10">
@@ -53,12 +54,12 @@ const Home = () => {
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
               At Symbiosis, we nurture creativity, foster collaboration, and build the future of technology together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/team" className="btn-hero group">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/team" className="btn-hero group inline-flex items-center justify-center px-6 py-3 rounded-lg">
                 Meet Our Team
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/events" className="btn-secondary group">
+              <Link to="/events" className="btn-secondary group inline-flex items-center justify-center px-6 py-3 rounded-lg">
                 Explore Events
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -138,8 +139,8 @@ const Home = () => {
           <div className="max-w-4xl mx-auto">
             <div className="glass-card text-center">
               <div className="flex justify-center mb-6">
-                <div className="p-4 rounded-full bg-gradient-to-br from-accent to-secondary">
-                  <Globe className="h-12 w-12 text-white" />
+                <div className="flex justify-center mb-6">
+                  <img src="/acm-logo.png" alt="ACM Logo" className="h-45 w-45" />
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-primary mb-6">
@@ -147,18 +148,18 @@ const Home = () => {
               </h2>
               <div className="space-y-6 text-text-secondary leading-relaxed">
                 <p className="text-lg">
-                  The Symbiosis ACM Student Chapter is a dynamic community of passionate computer science enthusiasts, 
-                  innovators, and future tech leaders. We are dedicated to fostering excellence in computing education, 
+                  The Symbiosis ACM Student Chapter is a dynamic community of passionate computer science enthusiasts,
+                  innovators, and future tech leaders. We are dedicated to fostering excellence in computing education,
                   research, and professional development.
                 </p>
                 <p>
-                  Our chapter serves as a bridge between academic learning and industry expertise, providing our members 
-                  with opportunities to engage with cutting-edge technologies, participate in competitive programming, 
+                  Our chapter serves as a bridge between academic learning and industry expertise, providing our members
+                  with opportunities to engage with cutting-edge technologies, participate in competitive programming,
                   and connect with like-minded peers who share a passion for innovation.
                 </p>
                 <p>
-                  Through workshops, hackathons, guest lectures, and collaborative projects, we create an environment 
-                  where students can explore new frontiers in computer science, develop practical skills, and build 
+                  Through workshops, hackathons, guest lectures, and collaborative projects, we create an environment
+                  where students can explore new frontiers in computer science, develop practical skills, and build
                   lasting professional networks that will serve them throughout their careers.
                 </p>
               </div>
@@ -170,4 +171,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home

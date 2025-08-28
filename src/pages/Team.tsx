@@ -13,8 +13,20 @@ const Team = () => {
   const teamMembers = [
     // 2025 Team
     {
-      name: 'Dr. Priya Sharma',
-      position: 'Faculty Advisor',
+      name: 'Dr. Deepak Dhaarao',
+      position: 'Faculty Mentor',
+      year: '2025',
+      image: '/api/placeholder/200/200',
+      bio: 'Professor of Computer Science with expertise in AI and Machine Learning',
+      social: {
+        linkedin: '#',
+        twitter: '#',
+        email: 'priya.sharma@symbiosis.edu'
+      }
+    },
+    {
+      name: 'Ranjeet Bhidwe',
+      position: 'Faculty Mentor',
       year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Professor of Computer Science with expertise in AI and Machine Learning',
@@ -201,7 +213,7 @@ const Team = () => {
   return (
     <div className="fade-in">
       {/* Header Section */}
-      <section className="hero-gradient py-20 text-center">
+      <section className="hero-gradient py-20 text-center relative" style={{ overflow: 'visible' }}>
         <div className="container-custom">
           <h1 className="text-5xl md:text-6xl font-poppins font-bold text-primary-foreground mb-6">
             Our Team <span className="text-accent-light">{selectedYear === 'all' ? '' : selectedYear}</span>
@@ -211,13 +223,13 @@ const Team = () => {
           </p>
           
           {/* Year Dropdown */}
-          <div className="max-w-xs mx-auto">
+          <div className="max-w-xs mx-auto relative z-50">
             <Dropdown
               options={yearOptions}
               value={selectedYear}
               onChange={setSelectedYear}
               placeholder="Select Team Year"
-              className="text-left"
+              className="text-left w-full"
             />
           </div>
         </div>

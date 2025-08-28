@@ -22,9 +22,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-accent to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">ACM</span>
-            </div>
+            <img src="/acm-logo.png" alt="ACM Logo" className="w-10 h-10" />
             <div>
               <h1 className="text-lg font-poppins font-bold text-primary">Symbiosis ACM</h1>
               <p className="text-xs text-text-secondary">Student Chapter</p>
@@ -37,11 +35,10 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-medium transition-all duration-300 relative ${
-                  isActive(item.path)
+                className={`font-medium transition-all duration-300 relative ${isActive(item.path)
                     ? 'text-accent'
                     : 'text-text-primary hover:text-accent'
-                }`}
+                  }`}
               >
                 {item.label}
                 {isActive(item.path) && (
@@ -70,11 +67,10 @@ const Navigation = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`font-medium py-2 px-3 rounded-lg transition-all duration-300 ${
-                    isActive(item.path)
+                  className={`font-medium py-2 px-3 rounded-lg transition-all duration-300 ${isActive(item.path)
                       ? 'text-accent bg-accent/10'
                       : 'text-text-primary hover:text-accent hover:bg-accent/5'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </Link>
