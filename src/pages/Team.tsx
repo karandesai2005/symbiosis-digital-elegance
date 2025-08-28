@@ -37,7 +37,7 @@ const Team = () => {
       }
     },
     {
-      name: 'Arjun Patel',
+      name: 'Devashree Kale',
       position: 'Chapter Chairperson',
       year: '2025',
       image: '/api/placeholder/200/200',
@@ -49,7 +49,7 @@ const Team = () => {
       }
     },
     {
-      name: 'Kavya Reddy',
+      name: 'Kushbu Agrawal',
       position: 'Vice Chairperson',
       year: '2025',
       image: '/api/placeholder/200/200',
@@ -61,8 +61,8 @@ const Team = () => {
       }
     },
     {
-      name: 'Rohit Singh',
-      position: 'Technical Lead',
+      name: 'Karan Desai',
+      position: 'Web Master',
       year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Open source contributor and cybersecurity specialist',
@@ -73,8 +73,8 @@ const Team = () => {
       }
     },
     {
-      name: 'Sneha Agarwal',
-      position: 'Events Coordinator',
+      name: 'Devaki Joshi',
+      position: 'Treasurer',
       year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Event management expert and UI/UX design enthusiast',
@@ -85,8 +85,8 @@ const Team = () => {
       }
     },
     {
-      name: 'Vikram Joshi',
-      position: 'Marketing Head',
+      name: 'Siddhant',
+      position: 'Secretary',
       year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Digital marketing strategist and content creator',
