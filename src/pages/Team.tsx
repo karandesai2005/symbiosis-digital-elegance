@@ -1,10 +1,21 @@
 import { Facebook, Instagram, Linkedin, Twitter, Github } from 'lucide-react';
+import { useState } from 'react';
+import Dropdown from '../components/ui/dropdown';
 
 const Team = () => {
+  const [selectedYear, setSelectedYear] = useState('2025');
+
+  const yearOptions = [
+    { value: '2025', label: 'Team 2025' },
+    { value: '2024', label: 'Team 2024' },
+    { value: 'all', label: 'All Teams' },
+  ];
   const teamMembers = [
+    // 2025 Team
     {
       name: 'Dr. Priya Sharma',
       position: 'Faculty Advisor',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Professor of Computer Science with expertise in AI and Machine Learning',
       social: {
@@ -16,6 +27,7 @@ const Team = () => {
     {
       name: 'Arjun Patel',
       position: 'Chapter Chairperson',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Final year CS student passionate about full-stack development',
       social: {
@@ -27,6 +39,7 @@ const Team = () => {
     {
       name: 'Kavya Reddy',
       position: 'Vice Chairperson',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'AI/ML enthusiast and competitive programming champion',
       social: {
@@ -38,6 +51,7 @@ const Team = () => {
     {
       name: 'Rohit Singh',
       position: 'Technical Lead',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Open source contributor and cybersecurity specialist',
       social: {
@@ -49,6 +63,7 @@ const Team = () => {
     {
       name: 'Sneha Agarwal',
       position: 'Events Coordinator',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Event management expert and UI/UX design enthusiast',
       social: {
@@ -60,6 +75,7 @@ const Team = () => {
     {
       name: 'Vikram Joshi',
       position: 'Marketing Head',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Digital marketing strategist and content creator',
       social: {
@@ -71,6 +87,7 @@ const Team = () => {
     {
       name: 'Ananya Kumar',
       position: 'Research Coordinator',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Research enthusiast specializing in data science and analytics',
       social: {
@@ -82,6 +99,7 @@ const Team = () => {
     {
       name: 'Harsh Gupta',
       position: 'Web Development Lead',
+      year: '2025',
       image: '/api/placeholder/200/200',
       bio: 'Full-stack developer and tech blog writer',
       social: {
@@ -90,22 +108,25 @@ const Team = () => {
         twitter: '#'
       }
     },
+    // 2024 Team
     {
-      name: 'Pooja Iyer',
-      position: 'Community Outreach',
+      name: 'Dr. Rajesh Kumar',
+      position: 'Faculty Advisor',
+      year: '2024',
       image: '/api/placeholder/200/200',
-      bio: 'Community builder and diversity advocate in tech',
+      bio: 'Associate Professor specializing in Software Engineering and Database Systems',
       social: {
         linkedin: '#',
-        instagram: '#',
-        facebook: '#'
+        twitter: '#',
+        email: 'rajesh.kumar@symbiosis.edu'
       }
     },
     {
-      name: 'Rahul Mishra',
-      position: 'Competition Coordinator',
+      name: 'Priya Nair',
+      position: 'Chapter Chairperson',
+      year: '2024',
       image: '/api/placeholder/200/200',
-      bio: 'Competitive programming mentor and algorithm expert',
+      bio: 'Former CS student with expertise in mobile app development',
       social: {
         linkedin: '#',
         github: '#',
@@ -113,10 +134,35 @@ const Team = () => {
       }
     },
     {
-      name: 'Divya Nair',
-      position: 'Design Head',
+      name: 'Karan Mehta',
+      position: 'Vice Chairperson',
+      year: '2024',
       image: '/api/placeholder/200/200',
-      bio: 'Creative designer and brand identity specialist',
+      bio: 'Cloud computing specialist and DevOps enthusiast',
+      social: {
+        linkedin: '#',
+        github: '#',
+        instagram: '#'
+      }
+    },
+    {
+      name: 'Ritika Shah',
+      position: 'Technical Lead',
+      year: '2024',
+      image: '/api/placeholder/200/200',
+      bio: 'Data science expert and machine learning researcher',
+      social: {
+        linkedin: '#',
+        github: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Aditya Sharma',
+      position: 'Events Coordinator',
+      year: '2024',
+      image: '/api/placeholder/200/200',
+      bio: 'Event planning specialist with focus on tech conferences',
       social: {
         linkedin: '#',
         instagram: '#',
@@ -124,17 +170,22 @@ const Team = () => {
       }
     },
     {
-      name: 'Siddharth Rao',
-      position: 'Treasurer',
+      name: 'Meera Agarwal',
+      position: 'Marketing Head',
+      year: '2024',
       image: '/api/placeholder/200/200',
-      bio: 'Finance management and blockchain technology enthusiast',
+      bio: 'Social media strategist and brand management expert',
       social: {
         linkedin: '#',
         twitter: '#',
-        github: '#'
+        instagram: '#'
       }
     }
   ];
+
+  const filteredMembers = selectedYear === 'all' 
+    ? teamMembers 
+    : teamMembers.filter(member => member.year === selectedYear);
 
   const getSocialIcon = (platform: string) => {
     const icons = {
@@ -153,11 +204,22 @@ const Team = () => {
       <section className="hero-gradient py-20 text-center">
         <div className="container-custom">
           <h1 className="text-5xl md:text-6xl font-poppins font-bold text-primary-foreground mb-6">
-            Our Team <span className="text-secondary">2025</span>
+            Our Team <span className="text-accent-light">{selectedYear === 'all' ? '' : selectedYear}</span>
           </h1>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Meet the passionate individuals who make Symbiosis ACM Student Chapter a thriving community of tech innovators.
           </p>
+          
+          {/* Year Dropdown */}
+          <div className="max-w-xs mx-auto">
+            <Dropdown
+              options={yearOptions}
+              value={selectedYear}
+              onChange={setSelectedYear}
+              placeholder="Select Team Year"
+              className="text-left"
+            />
+          </div>
         </div>
       </section>
 
@@ -165,7 +227,7 @@ const Team = () => {
       <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
+            {filteredMembers.map((member, index) => (
               <div key={index} className="team-card group">
                 {/* Profile Image */}
                 <div className="relative mb-6">
@@ -186,7 +248,7 @@ const Team = () => {
                   <h3 className="text-xl font-poppins font-bold text-primary mb-2 group-hover:text-accent transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-secondary font-semibold mb-3">{member.position}</p>
+                  <p className="text-accent font-semibold mb-3">{member.position}</p>
                   <p className="text-text-secondary text-sm leading-relaxed mb-4">
                     {member.bio}
                   </p>
@@ -213,6 +275,17 @@ const Team = () => {
               </div>
             ))}
           </div>
+          
+          {filteredMembers.length === 0 && (
+            <div className="text-center py-12">
+              <h3 className="text-xl font-poppins font-bold text-text-secondary mb-2">
+                No team members found
+              </h3>
+              <p className="text-text-muted">
+                No team members match the selected year.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

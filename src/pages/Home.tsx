@@ -48,7 +48,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto">
             <h1 className="text-6xl md:text-7xl font-poppins font-bold text-primary-foreground mb-6 animate-float">
               Empowering Tech
-              <span className="block text-secondary animate-pulse-glow">Innovators</span>
+              <span className="block text-accent-light animate-pulse-glow">Innovators</span>
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
               At Symbiosis, we nurture creativity, foster collaboration, and build the future of technology together.
@@ -67,10 +67,10 @@ const Home = () => {
         </div>
 
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-secondary/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-40 left-20 w-12 h-12 bg-accent/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 bg-secondary/10 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-accent/10 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-secondary/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-40 left-20 w-12 h-12 bg-accent/15 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-secondary/8 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
       </section>
 
       {/* Stats Section */}
