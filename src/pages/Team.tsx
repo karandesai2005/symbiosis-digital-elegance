@@ -43,7 +43,7 @@ const Team = () => {
       position: 'Chapter Chairperson',
       year: '2025',
       image: '/devashree_kale.jpeg',
-      bio: 'Final year CS student passionate about leadership and development',
+      bio: 'Pre-Final year CS student passionate about leadership and development',
       linkedin: 'https://www.linkedin.com/in/devashreekale/'
     },
     {
