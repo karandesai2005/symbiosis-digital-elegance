@@ -2,11 +2,8 @@ import { Heart, Mail, Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lu
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook', color: 'hover:text-blue-500' },
-    { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:text-pink-500' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-blue-600' },
-    { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: Youtube, href: '#', label: 'YouTube', color: 'hover:text-red-500' },
+    { icon: Instagram, href: 'https://www.instagram.com/symbiosis_acm/', label: 'Instagram', color: 'hover:text-pink-500' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/symbiosis-acm/', label: 'LinkedIn', color: 'hover:text-blue-600' },
   ];
 
   return (
@@ -60,12 +57,15 @@ const Footer = () => {
                 We would love to hear from you
               </p>
               <a
-                href="mailto:acm@symbiosis.edu"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=symbiosis_acm@sitpune.edu.in"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 btn-secondary text-sm"
               >
                 <Mail size={16} />
                 Contact Us
               </a>
+
             </div>
 
             {/* Social Media */}
@@ -91,9 +91,6 @@ const Footer = () => {
           {/* Bottom Section */}
           <div className="border-t border-primary-foreground/20 pt-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-primary-foreground/60 text-sm flex items-center gap-1">
-                Designed and Developed with <Heart size={16} className="text-red-500" />
-              </p>
               <p className="text-primary-foreground/60 text-sm">
                 Ⓒ Symbiosis ACM Student Chapter, 2025
               </p>
