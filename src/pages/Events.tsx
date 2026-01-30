@@ -1,4 +1,5 @@
-import { Calendar, Sparkles, Bell } from 'lucide-react';
+import { Calendar, CheckCircle, Image } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   return (
@@ -9,51 +10,72 @@ const Events = () => {
           <h1 className="text-5xl md:text-6xl font-poppins font-bold text-primary-foreground mb-6">
             Our <span className="text-secondary">Events</span>
           </h1>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed mb-8">
-            Workshops, hackathons, tech talks, and competitions — crafted to elevate
-            your learning and community experience.
+          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            A look back at the workshops, bootcamps, and tech sessions conducted by
+            SIT ACM Student Chapter.
           </p>
-          <div className="glass inline-flex items-center gap-2 px-6 py-3 rounded-lg text-primary-foreground">
-            <Calendar className="h-5 w-5" />
-            <span className="font-semibold">New events launching soon</span>
-          </div>
         </div>
       </section>
 
-      {/* Coming Soon Section */}
+      {/* Past Event Section */}
       <section className="py-24">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="glass-card relative overflow-hidden p-12 md:p-16 text-center">
+          <div className="max-w-6xl mx-auto">
+            <div className="glass-card grid md:grid-cols-2 gap-12 p-10 md:p-14 items-center">
               
-              {/* Background Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-secondary/20 to-transparent blur-3xl" />
+              {/* Event Poster */}
+              <div className="flex justify-center">
+                <img
+                  src="/jan2026/img1.png"
+                  alt="Data to Dashboards - Tableau Bootcamp"
+                  className="rounded-2xl shadow-2xl max-h-[520px] w-auto"
+                />
+              </div>
 
-              <div className="relative z-10">
-                <div className="flex justify-center mb-6">
-                  <div className="p-4 rounded-full bg-accent/20 text-accent">
-                    <Sparkles className="h-10 w-10" />
-                  </div>
+              {/* Event Content */}
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/15 text-green-500 mb-4">
+                  <CheckCircle className="h-4 w-4" />
+                  <span className="font-semibold text-sm">Event Completed</span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
-                  Events <span className="text-gradient">Coming Soon</span>
+                <h2 className="text-4xl font-poppins font-bold text-primary mb-4">
+                  Data to Dashboards
                 </h2>
 
-                <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-                  We’re working behind the scenes to bring you impactful workshops,
-                  exciting hackathons, insightful tech talks, and competitive events.
-                  Stay tuned — announcements are right around the corner 🚀
+                <p className="text-secondary font-semibold mb-4">
+                  Tableau Bootcamp
                 </p>
 
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                  <button className="btn-hero flex items-center gap-2">
-                    <Bell className="h-4 w-4" />
-                    Get Notified
-                  </button>
-                  <button className="btn-secondary">
-                    Propose an Event
-                  </button>
+                <div className="flex items-center gap-2 text-text-secondary mb-6">
+                  <Calendar className="h-4 w-4" />
+                  <span>10th January 2026</span>
+                </div>
+
+                <p className="text-text-secondary leading-relaxed mb-6">
+                  <strong>Data to Dashboards</strong> was a hands-on Tableau bootcamp
+                  focused on transforming raw data into meaningful, interactive
+                  dashboards. Participants explored real-world datasets and learned
+                  how data visualization plays a critical role in data science and
+                  business decision-making.
+                </p>
+
+                <ul className="list-disc pl-5 text-text-secondary space-y-2 mb-8">
+                  <li>Introduction to data visualization principles</li>
+                  <li>Hands-on dashboard creation using Tableau</li>
+                  <li>Working with real datasets and KPIs</li>
+                  <li>Portfolio-ready dashboard project</li>
+                </ul>
+
+                <div className="flex flex-wrap gap-4">
+                  <Link to="/glimpses" className="btn-hero flex items-center gap-2">
+                    <Image className="h-4 w-4" />
+                    See Glimpses
+                  </Link>
+
+                  <span className="btn-secondary cursor-default opacity-70">
+                    Registrations Closed
+                  </span>
                 </div>
               </div>
             </div>
@@ -66,16 +88,15 @@ const Events = () => {
         <div className="container-custom text-center">
           <div className="glass-card max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-poppins font-bold text-primary mb-6">
-              Want to Collaborate with <span className="text-gradient">Us</span>?
+              More Events Coming Soon
             </h2>
             <p className="text-text-secondary leading-relaxed mb-8">
-              If you have an idea for a workshop, speaker session, or community-driven
-              event, we’d love to hear from you. Let’s build something meaningful
-              together.
+              Stay connected with SIT ACM Student Chapter for upcoming workshops,
+              hackathons, and technical sessions.
             </p>
-            <button className="btn-secondary">
-              Contact the Team
-            </button>
+            <Link to="/glimpses" className="btn-secondary">
+              Explore Past Events
+            </Link>
           </div>
         </div>
       </section>
