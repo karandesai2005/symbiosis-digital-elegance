@@ -17,13 +17,74 @@ const Events = () => {
         </div>
       </section>
 
-      {/* ================= UPCOMING EVENT (TOP) ================= */}
+      {/* ================= LATEST EVENT ================= */}
       <section className="py-24">
         <div className="container-custom">
           <div className="max-w-6xl mx-auto">
             <div className="glass-card grid md:grid-cols-2 gap-12 p-10 md:p-14 items-center border border-accent/30">
-              
-              {/* Event Poster */}
+
+              {/* Poster */}
+              <div className="flex justify-center">
+                <img
+                  src="/feb2026/techpecharcha.jpeg"
+                  alt="TechPeCharcha Event"
+                  className="rounded-2xl shadow-2xl max-h-[520px] w-auto"
+                />
+              </div>
+
+              {/* Content */}
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/15 text-yellow-500 mb-4">
+                  <Clock className="h-4 w-4" />
+                  <span className="font-semibold text-sm">Upcoming Event</span>
+                </div>
+
+                <h2 className="text-4xl font-poppins font-bold text-primary mb-4">
+                  TechPeCharcha
+                </h2>
+
+                <p className="text-secondary font-semibold mb-4">
+                  Advances in AI in Software Development
+                </p>
+
+                <div className="flex items-center gap-2 text-text-secondary mb-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>20 February 2026 · 11:00 AM – 12:00 PM</span>
+                </div>
+
+                <p className="text-text-secondary mb-2">
+                  <strong>Speaker:</strong> Mr. Ajay Deshpande
+                </p>
+
+                <p className="text-text-secondary mb-4">
+                  <strong>Venue:</strong> 4th Floor, Seminar Hall, SIT
+                </p>
+
+                <p className="text-text-secondary leading-relaxed mb-6">
+                  An academic–industry interaction session focusing on real-world applications,
+                  global practices, and project mentorship in AI-driven software development.
+                </p>
+
+                <ul className="list-disc pl-5 text-text-secondary space-y-2">
+                  <li>AI in Software Development</li>
+                  <li>Industry Trends</li>
+                  <li>Real-world Applications</li>
+                  <li>Mentorship Insights</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SECOND UPCOMING EVENT ================= */}
+      <section className="py-24">
+        <div className="container-custom">
+          <div className="max-w-6xl mx-auto">
+            <div className="glass-card grid md:grid-cols-2 gap-12 p-10 md:p-14 items-center border border-accent/30">
+
+              {/* Poster */}
               <div className="flex justify-center">
                 <img
                   src="/feb2026/reg.png"
@@ -32,11 +93,11 @@ const Events = () => {
                 />
               </div>
 
-              {/* Event Content */}
+              {/* Content */}
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/15 text-yellow-500 mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/15 text-blue-500 mb-4">
                   <Clock className="h-4 w-4" />
-                  <span className="font-semibold text-sm">Upcoming Event</span>
+                  <span className="font-semibold text-sm">Next Major Event</span>
                 </div>
 
                 <h2 className="text-4xl font-poppins font-bold text-primary mb-4">
@@ -53,11 +114,8 @@ const Events = () => {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed mb-6">
-                  <strong>TechVortex 3.0</strong> is an international-level project
-                  competition organized by the SIT ACM Student Chapter in association
-                  with the CSE Department. Participants can showcase innovative
-                  projects across domains such as AI & Data Science, Cloud Computing,
-                  Web Development, and Cybersecurity.
+                  An international-level competition where students showcase innovative
+                  projects across domains like AI, Cloud, Web, and Cybersecurity.
                 </p>
 
                 <ul className="list-disc pl-5 text-text-secondary space-y-2 mb-8">
@@ -93,17 +151,17 @@ const Events = () => {
         <div className="container-custom">
           <div className="max-w-6xl mx-auto">
             <div className="glass-card grid md:grid-cols-2 gap-12 p-10 md:p-14 items-center">
-              
-              {/* Event Poster */}
+
+              {/* Poster */}
               <div className="flex justify-center">
                 <img
                   src="/jan2026/img1.png"
-                  alt="Data to Dashboards - Tableau Bootcamp"
+                  alt="Data to Dashboards"
                   className="rounded-2xl shadow-2xl max-h-[520px] w-auto"
                 />
               </div>
 
-              {/* Event Content */}
+              {/* Content */}
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/15 text-green-500 mb-4">
                   <CheckCircle className="h-4 w-4" />
@@ -124,16 +182,15 @@ const Events = () => {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed mb-6">
-                  A hands-on Tableau bootcamp focused on transforming raw data into
-                  meaningful dashboards. Participants worked with real-world datasets
-                  and built portfolio-ready visualization projects.
+                  Hands-on bootcamp focused on data visualization and building
+                  interactive dashboards using Tableau.
                 </p>
 
                 <ul className="list-disc pl-5 text-text-secondary space-y-2 mb-8">
-                  <li>Data visualization fundamentals</li>
-                  <li>Interactive dashboards with Tableau</li>
-                  <li>Real-world datasets & KPIs</li>
-                  <li>Portfolio-ready project</li>
+                  <li>Visualization fundamentals</li>
+                  <li>Interactive dashboards</li>
+                  <li>Real-world datasets</li>
+                  <li>Portfolio projects</li>
                 </ul>
 
                 <div className="flex flex-wrap gap-4">
@@ -152,7 +209,7 @@ const Events = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20">
         <div className="container-custom text-center">
           <div className="glass-card max-w-3xl mx-auto">
@@ -160,8 +217,7 @@ const Events = () => {
               Stay Tuned for More Events
             </h2>
             <p className="text-text-secondary leading-relaxed mb-8">
-              Follow SIT ACM Student Chapter for updates on registrations, workshops,
-              and upcoming competitions.
+              Follow SIT ACM Student Chapter for updates on workshops and competitions.
             </p>
             <Link to="/glimpses" className="btn-secondary">
               Explore Past Events
