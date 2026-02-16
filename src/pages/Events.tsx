@@ -126,12 +126,14 @@ const Events = () => {
                 </ul>
 
                 <div className="flex flex-wrap gap-4">
-                  <button
-                    disabled
-                    className="btn-hero opacity-60 cursor-not-allowed"
+                  <a
+                    href="https://unstop.com/competitions/techvortex-30-international-project-competition-symbiosis-institute-of-technology-sit-pune-1633555"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-hero"
                   >
-                    Registration Starting Soon
-                  </button>
+                    Register on Unstop
+                  </a>
 
                   <button
                     disabled
